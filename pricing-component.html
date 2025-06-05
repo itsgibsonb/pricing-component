@@ -63,10 +63,42 @@
       justify-content: center;
       align-items: center;
       margin-bottom: 30px;
-      gap: 15px;
+      gap: 0;
       background-color: #f9fafb;
-      padding: 20px;
+      padding: 0;
       border-radius: 12px;
+      border: 1.5px solid #e5e7eb;
+      overflow: hidden;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .billing-tabs {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .billing-tab {
+      background: none;
+      border: none;
+      outline: none;
+      padding: 18px 36px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #6b7280;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      border-radius: 0;
+    }
+    .billing-tab.active {
+      background: #fff;
+      color: #0F2730;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(55,181,255,0.08);
+      border-bottom: 2.5px solid #37B5FF;
+      z-index: 1;
+    }
+    .billing-tab:not(.active):hover {
+      background: #f3f4f6;
+      color: #222;
     }
 
     .toggle-switch {
@@ -640,13 +672,9 @@
 <body>
   <div class="pricing-container">
     <!-- Billing Toggle -->
-    <div class="billing-toggle">
-      <span class="billing-option active" id="monthly-option">Monthly</span>
-      <label class="toggle-switch">
-        <input type="checkbox" id="billing-toggle">
-        <span class="slider"></span>
-      </label>
-      <span class="billing-option" id="yearly-option">Yearly (2 Months Free!)</span>
+    <div class="billing-toggle billing-tabs">
+      <button class="billing-tab active" id="monthly-tab" type="button">Monthly</button>
+      <button class="billing-tab" id="yearly-tab" type="button">Yearly (2 Months Free!)</button>
     </div>
 
     <!-- Plans Grid -->
@@ -873,9 +901,8 @@
       };
 
       // DOM Elements
-      const billingToggle = document.getElementById('billing-toggle');
-      const monthlyOption = document.getElementById('monthly-option');
-      const yearlyOption = document.getElementById('yearly-option');
+      const monthlyTab = document.getElementById('monthly-tab');
+      const yearlyTab = document.getElementById('yearly-tab');
       const starterPlan = document.getElementById('starter-plan');
       const growthPlan = document.getElementById('growth-plan');
       const starterPrice = document.getElementById('starter-price');
@@ -899,13 +926,25 @@
       updateSummary();
 
       // Event Listeners
-      billingToggle.addEventListener('change', function() {
-        state.billingCycle = this.checked ? 'yearly' : 'monthly';
-        monthlyOption.classList.toggle('active', !this.checked);
-        yearlyOption.classList.toggle('active', this.checked);
-        summaryTitle.textContent = this.checked ? 'Yearly Total' : 'Monthly Total';
-        updatePriceLabels();
-        updateSummary();
+      monthlyTab.addEventListener('click', function() {
+        if (state.billingCycle !== 'monthly') {
+          state.billingCycle = 'monthly';
+          monthlyTab.classList.add('active');
+          yearlyTab.classList.remove('active');
+          summaryTitle.textContent = 'Monthly Total';
+          updatePriceLabels();
+          updateSummary();
+        }
+      });
+      yearlyTab.addEventListener('click', function() {
+        if (state.billingCycle !== 'yearly') {
+          state.billingCycle = 'yearly';
+          yearlyTab.classList.add('active');
+          monthlyTab.classList.remove('active');
+          summaryTitle.textContent = 'Yearly Total';
+          updatePriceLabels();
+          updateSummary();
+        }
       });
 
       starterPlan.addEventListener('click', function() {
