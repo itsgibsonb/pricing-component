@@ -52,7 +52,7 @@
 
     /* Container styles */
     .pricing-container {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
       padding: 20px;
     }
@@ -64,6 +64,9 @@
       align-items: center;
       margin-bottom: 30px;
       gap: 15px;
+      background-color: #f9fafb;
+      padding: 20px;
+      border-radius: 12px;
     }
 
     .toggle-switch {
@@ -86,7 +89,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: #ccc;
+      background-color: #d1d5db;
       transition: .4s;
       border-radius: 34px;
     }
@@ -101,6 +104,7 @@
       background-color: white;
       transition: .4s;
       border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
 
     input:checked + .slider {
@@ -173,6 +177,19 @@
       font-size: 22px;
       font-weight: 700;
       color: #0F2730;
+      position: relative;
+    }
+
+    .free-tag {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #059669;
+      background-color: #d1fae5;
+      padding: 3px 8px;
+      border-radius: 12px;
+      margin-top: 5px;
+      display: inline-block;
     }
 
     .plan-description {
@@ -204,7 +221,7 @@
     }
 
     .addons-title {
-      font-size: 24px;
+      font-size: 32px;
       font-weight: 600;
       margin-bottom: 10px;
     }
@@ -253,6 +270,7 @@
       font-weight: 600;
       color: #0F2730;
       margin-bottom: 15px;
+      position: relative;
     }
 
     .addon-features {
@@ -352,7 +370,7 @@
       display: block;
       width: 100%;
       padding: 15px;
-      background-color: #0F2730;
+      background-color: #37B5FF;
       color: white;
       border: none;
       border-radius: 8px;
@@ -366,7 +384,7 @@
     }
 
     .get-started-btn:hover {
-      background-color: #37B5FF;
+      background-color: #0F2730;
     }
 
     /* Responsive styles */
@@ -401,14 +419,15 @@
         padding: 15px;
       }
       
+      .billing-toggle {
+        padding: 15px 10px;
+        gap: 10px;
+      }
+      
       .plan-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
-      }
-      
-      .billing-toggle {
-        flex-wrap: wrap;
       }
       
       .addon-card, .plan-card {
@@ -495,6 +514,17 @@
       font-size: 14px;
       color: #6b7280;
       margin-bottom: 15px;
+    }
+
+    /* Make addon free tags appear inline */
+    .addon-card .free-tag {
+      margin-top: 0;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    .addon-card .addon-price {
+      display: inline-block;
     }
 
     .social-accounts-control button:hover:not(:disabled) {
@@ -628,7 +658,10 @@
             <span>🌱</span>
             <span>Starter</span>
           </div>
-          <div class="plan-price" id="starter-price">$15/mo</div>
+          <div>
+            <div class="plan-price" id="starter-price">$15/mo</div>
+            <span class="free-tag" id="starter-free-tag" style="display: none;">2 months free!</span>
+          </div>
         </div>
         <div class="plan-description" style="margin-bottom: 16px; color: #6b7280; font-size: 15px;">Best for solo social managers or small churches getting started with social media.</div>
         <div class="plan-features">
@@ -671,7 +704,10 @@
             <span>🚀</span>
             <span>Growth</span>
           </div>
-          <div class="plan-price" id="growth-price">$25/mo</div>
+          <div>
+            <div class="plan-price" id="growth-price">$25/mo</div>
+            <span class="free-tag" id="growth-free-tag" style="display: none;">2 months free!</span>
+          </div>
         </div>
         <div class="plan-description" style="margin-bottom: 16px; color: #6b7280; font-size: 15px;">Best for teams who want to collaborate and scale their social media presence.</div>
         <div class="plan-features">
@@ -706,7 +742,7 @@
 
       <!-- Summary Card -->
       <div class="summary-card">
-        <div class="summary-title">Summary</div>
+        <div class="summary-title" id="summary-title">Monthly Total</div>
         <div class="summary-items" id="summary-items">
           <!-- Will be populated by JavaScript -->
         </div>
@@ -714,7 +750,7 @@
           <span>Total:</span>
           <span id="total-price">$0/mo</span>
         </div>
-        <a href="https://app.churchsocial.ai/signup" class="get-started-btn">Get Started</a>
+        <a href="https://app.churchsocial.ai/signup" class="get-started-btn">Try It 7 Days Free</a>
       </div>
     </div>
 
@@ -735,6 +771,7 @@
           </label>
           <h3 class="addon-title">Sermon Studio</h3>
           <div class="addon-price" id="sermon-studio-price">+$49/mo</div>
+          <span class="free-tag" id="sermon-studio-free-tag" style="display: none;">2 months free!</span>
           <div class="addon-features">
             <div class="addon-feature">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -763,6 +800,7 @@
           </label>
           <h3 class="addon-title">Design Studio</h3>
           <div class="addon-price" id="design-studio-price">+$15/mo</div>
+          <span class="free-tag" id="design-studio-free-tag" style="display: none;">2 months free!</span>
           <div class="addon-features">
             <div class="addon-feature">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -791,6 +829,7 @@
           </label>
           <h3 class="addon-title">Additional Social Accounts</h3>
           <div class="addon-price" id="social-accounts-price">+$8/mo per account</div>
+          <span class="free-tag" id="social-accounts-free-tag" style="display: none;">2 months free!</span>
           <p class="addon-subtitle">Additional account for posting</p>
           <div class="social-accounts-control">
             <button id="decrease-accounts" disabled>-</button>
@@ -853,6 +892,7 @@
       const summaryItems = document.getElementById('summary-items');
       const totalPrice = document.getElementById('total-price');
       const getStartedBtn = document.querySelector('.get-started-btn');
+      const summaryTitle = document.getElementById('summary-title');
 
       // Initialize UI
       updatePriceLabels();
@@ -863,6 +903,7 @@
         state.billingCycle = this.checked ? 'yearly' : 'monthly';
         monthlyOption.classList.toggle('active', !this.checked);
         yearlyOption.classList.toggle('active', this.checked);
+        summaryTitle.textContent = this.checked ? 'Yearly Total' : 'Monthly Total';
         updatePriceLabels();
         updateSummary();
       });
@@ -1008,15 +1049,22 @@
       function updatePriceLabels() {
         const cycle = state.billingCycle;
         const suffix = cycle === 'monthly' ? '/mo' : '/year';
+        const showFreeTag = cycle === 'yearly';
         
         starterPrice.textContent = `$${pricing[cycle].starter}${suffix}`;
         growthPrice.textContent = `$${pricing[cycle].growth}${suffix}`;
         sermonStudioPrice.textContent = `+$${pricing[cycle].sermonStudio}${suffix}`;
         designStudioPrice.textContent = `+$${pricing[cycle].designStudio}${suffix}`;
-        
         // Social accounts price is per account
         const socialPrice = pricing[cycle].socialAccounts;
         socialAccountsPrice.textContent = `+$${socialPrice}${suffix} per account`;
+
+        // Show/hide free tags
+        document.getElementById('starter-free-tag').style.display = showFreeTag ? 'inline-block' : 'none';
+        document.getElementById('growth-free-tag').style.display = showFreeTag ? 'inline-block' : 'none';
+        document.getElementById('sermon-studio-free-tag').style.display = showFreeTag ? 'inline-block' : 'none';
+        document.getElementById('design-studio-free-tag').style.display = showFreeTag ? 'inline-block' : 'none';
+        document.getElementById('social-accounts-free-tag').style.display = showFreeTag ? 'inline-block' : 'none';
       }
 
       function updateSummary() {
