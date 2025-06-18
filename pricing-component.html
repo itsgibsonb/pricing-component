@@ -618,13 +618,14 @@
 </head>
 <body>
 <div id="cs-pricing-component">
-  <div class="billing-toggle">
-    <span class="billing-option monthly active">Monthly</span>
+  <!-- Interactive Monthly/Yearly Toggle -->
+  <div class="billing-toggle" style="margin-bottom: 25px;">
+    <span class="billing-option monthly active" id="monthly-label">Monthly</span>
     <label class="toggle-switch">
-      <input type="checkbox" id="billing-toggle-checkbox-top">
+      <input type="checkbox" id="billing-toggle-checkbox">
       <span class="cs-slider"></span>
     </label>
-    <span class="billing-option yearly">Yearly (2 Months Free!)</span>
+    <span class="billing-option yearly" id="yearly-label">Yearly (2 Months Free!)</span>
   </div>
   <div class="pricing-container">
     <!-- Starter Plan -->
@@ -707,13 +708,14 @@
               <!-- TikTok -->
               <svg width="20" height="20" viewBox="0 0 64 64" style="vertical-align:middle;" xmlns="http://www.w3.org/2000/svg"><g><path fill="#FF004F" d="M58,19.4v9.3c-0.5,0-1.1,0.1-1.7,0.1c-4.5,0-8.7-1.7-11.9-4.4v19.8c0,4-1.3,7.8-3.6,10.8c-3.2,4.3-8.4,7.2-14.3,7.2c-6.4,0-12-3.4-15.1-8.4c3.2,3,7.5,4.9,12.2,4.9c5.8,0,11-2.8,14.2-7.2c2.2-3,3.6-6.7,3.6-10.8V20.8c3.2,2.8,7.3,4.4,11.9,4.4c0.6,0,1.1,0,1.7-0.1v-6c0.9,0.2,1.7,0.3,2.6,0.3H58z"/><path fill="#FF004F" d="M29,26.3v10.3c-0.7-0.2-1.5-0.3-2.2-0.3c-4.4,0-8,3.7-8,8.2c0,1,0.2,1.9,0.5,2.8c-2-1.5-3.4-3.9-3.4-6.6c0-4.5,3.6-8.2,8-8.2c0.8,0,1.5,0.1,2.2,0.3l0-6.6c0.2,0,0.4,0,0.6,0C27.5,26.2,28.3,26.2,29,26.3z"/><path fill="#FF004F" d="M45.9,12c-1.8-1.6-3.1-3.8-3.8-6.1h2.4c0,0.5,0,0.9,0,1.4C44.7,8.9,45.2,10.5,45.9,12z"/></g><path d="M55.1,19.2v6c-0.5,0.1-1.1,0.1-1.7,0.1c-4.5,0-8.7-1.7-11.9-4.4v19.8c0,4-1.3,7.8-3.6,10.8c-3.3,4.4-8.4,7.2-14.2,7.2c-4.7,0-9-1.9-12.2-4.9c-1.7-2.8-2.7-6-2.7-9.5c0-9.7,7.7-17.6,17.3-17.9l0,6.6c-0.7-0.2-1.5-0.3-2.2-0.3c-4.4,0-8,3.7-8,8.2c0,2.7,1.3,5.2,3.4,6.6c1.1,3.1,4.1,5.4,7.5,5.4c4.4,0,8-3.6,8-8.1V5.9h7.3c0.7,2.4,2,4.5,3.8,6.1C47.7,15.6,51.1,18.3,55.1,19.2z"/><g><g><path fill="#00F7EF" d="M26.1,22.8l0,3.4c-9.6,0.3-17.3,8.2-17.3,17.9c0,3.5,1,6.7,2.7,9.5C8.1,50.3,6,45.7,6,40.5c0-9.9,8-17.9,17.8-17.9C24.6,22.6,25.4,22.7,26.1,22.8z"/><path fill="#00F7EF" d="M42.1,5.9h-7.3v38.6c0,4.5-3.6,8.2-8,8.2c-3.5,0-6.4-2.2-7.5-5.4c1.3,0.9,2.9,1.5,4.6,1.5c4.4,0,8-3.6,8-8.1V2h9.7v0.2c0,0.4,0,0.8,0.1,1.2C41.7,4.2,41.9,5.1,42.1,5.9z"/></g><path fill="#00F7EF" d="M55.1,15.5C55.1,15.5,55.1,15.5,55.1,15.5v3.6c-4-0.8-7.4-3.5-9.3-7.1C48.3,14.3,51.5,15.6,55.1,15.5z"/></g></g></svg>
             </span>
-          </div>
-          <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Visual Social Media Planner</span></div>
-          <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>AI caption writer</span></div>
-          <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>PCO integration</span></div>
-          <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Auto-publish to Instagram, Facebook, Youtube, TikTok, X</span></div>
-          <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>AI Suggested Posts</span></div>
-          <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>(Coming Soon!) DM and Comment Inbox</span></div>
+          </span>
+        </div>
+        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Visual Social Media Planner</span></div>
+        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>AI caption writer</span></div>
+        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>PCO integration</span></div>
+        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Auto-publish to Instagram, Facebook, Youtube, TikTok, X</span></div>
+        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>AI Suggested Posts</span></div>
+        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>(Coming Soon!) DM and Comment Inbox</span></div>
 
     </div>
   </div>
@@ -727,10 +729,6 @@
         <div class="popular-badge">
           <span>🔥</span> Popular
         </div>
-        <label class="checkbox-container">
-          <input type="checkbox" id="sermon-studio-checkbox">
-          <span class="checkmark"></span>
-        </label>
         <h3 class="addon-title">Sermon Studio</h3>
         <div class="addon-price-container">
           <div class="addon-price" id="sermon-studio-price">+$49/mo</div>
@@ -766,10 +764,6 @@
 
       <!-- Design Studio Addon -->
       <div class="addon-card" id="design-studio">
-        <label class="checkbox-container">
-          <input type="checkbox" id="design-studio-checkbox">
-          <span class="checkmark"></span>
-        </label>
         <h3 class="addon-title">Design Studio</h3>
         <div class="addon-price-container">
           <div class="addon-price" id="design-studio-price">+$15/mo</div>
@@ -801,53 +795,21 @@
 
       <!-- Additional Social Accounts Addon -->
       <div class="addon-card" id="social-accounts">
-        <label class="checkbox-container">
-          <input type="checkbox" id="social-accounts-checkbox">
-          <span class="checkmark"></span>
-        </label>
         <h3 class="addon-title">Additional Social Accounts</h3>
         <div class="addon-price-container">
           <div class="addon-price" id="social-accounts-price">+$8/mo per account</div>
           <span class="free-tag" id="social-accounts-free-tag" style="display: none;">2 months free!</span>
         </div>
         <p class="addon-subtitle">Additional account for posting</p>
-        <div class="social-accounts-control">
-          <button id="decrease-accounts" disabled>-</button>
-          <span class="social-accounts-count" id="social-accounts-count">0</span>
-          <button id="increase-accounts">+</button>
-        </div>
+        <div class="social-accounts-control" style="display: none;"></div>
       </div>
     </div>
   </div>
 
-  <div class="summary-row">
-    <div class="summary-card">
-      <div class="summary-title" id="summary-title">Monthly Total</div>
-      <div class="summary-content-wrapper">
-        <div class="summary-breakdown">
-          <div id="summary-items" class="summary-items">
-            <!-- Will be populated by JavaScript -->
-          </div>
-        </div>
-        <div class="summary-total-box">
-          <div class="billing-toggle">
-            <span class="billing-option monthly active">Monthly</span>
-            <label class="toggle-switch">
-              <input type="checkbox" id="billing-toggle-checkbox">
-              <span class="cs-slider"></span>
-            </label>
-            <span class="billing-option yearly">Yearly (2 Months Free!)</span>
-          </div>
-          <div class="summary-total">
-            <span>Total:</span>
-            <span id="total-price">$0/mo</span>
-          </div>
-          <a href="https://app.churchsocial.ai/signup" class="get-started-btn">Try It 7 Days Free</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <!-- Removed summary-row and script for static version -->
+</div>
+  <!-- Static CTA Button -->
+  <a href="https://app.churchsocial.ai/signup?via=danielle" class="get-started-btn" style="margin: 40px auto 0; max-width: 400px; display: block;">Try It 7 Days Free</a>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Pricing data
@@ -864,294 +826,78 @@
           growth: 250,
           sermonStudio: 490,
           designStudio: 150,
-          socialAccounts: 8 * 10 // Assuming yearly is 10 months worth
+          socialAccounts: 80 // 8*10
         }
       };
 
       // State
-      let state = {
-        billingCycle: 'monthly',
-        selectedPlan: null,
-        addons: {
-          sermonStudio: false,
-          designStudio: false,
-          socialAccounts: 0
-        }
-      };
+      let billingCycle = 'monthly';
 
       // DOM Elements
       const billingToggleCheckbox = document.getElementById('billing-toggle-checkbox');
-      const monthlyLabel = document.querySelector('.billing-option.monthly');
-      const yearlyLabel = document.querySelector('.billing-option.yearly');
-      const starterPlan = document.getElementById('starter-plan');
-      const growthPlan = document.getElementById('growth-plan');
+      const monthlyLabel = document.getElementById('monthly-label');
+      const yearlyLabel = document.getElementById('yearly-label');
       const starterPrice = document.getElementById('starter-price');
       const growthPrice = document.getElementById('growth-price');
-      const sermonStudioCheckbox = document.getElementById('sermon-studio-checkbox');
-      const designStudioCheckbox = document.getElementById('design-studio-checkbox');
-      const socialAccountsCheckbox = document.getElementById('social-accounts-checkbox');
-      const decreaseAccounts = document.getElementById('decrease-accounts');
-      const increaseAccounts = document.getElementById('increase-accounts');
-      const socialAccountsCount = document.getElementById('social-accounts-count');
       const sermonStudioPrice = document.getElementById('sermon-studio-price');
       const designStudioPrice = document.getElementById('design-studio-price');
       const socialAccountsPrice = document.getElementById('social-accounts-price');
-      const summaryItems = document.getElementById('summary-items');
-      const totalPrice = document.getElementById('total-price');
-      const getStartedBtn = document.querySelector('.get-started-btn');
-      const summaryTitle = document.getElementById('summary-title');
+      const starterFreeTag = document.getElementById('starter-free-tag');
+      const growthFreeTag = document.getElementById('growth-free-tag');
+      const sermonStudioFreeTag = document.getElementById('sermon-studio-free-tag');
+      const designStudioFreeTag = document.getElementById('design-studio-free-tag');
+      const socialAccountsFreeTag = document.getElementById('social-accounts-free-tag');
 
-      // Initialize UI
-      updatePriceLabels();
-      updateSummary();
-
-      // Event Listeners
-      function setBillingCycle() {
-        if (billingToggleCheckbox.checked) { // Yearly
-          state.billingCycle = 'yearly';
-          summaryTitle.textContent = 'Yearly Total';
-          monthlyLabel.classList.remove('active');
-          yearlyLabel.classList.add('active');
-        } else { // Monthly
-          state.billingCycle = 'monthly';
-          summaryTitle.textContent = 'Monthly Total';
-          yearlyLabel.classList.remove('active');
-          monthlyLabel.classList.add('active');
-        }
-        updatePriceLabels();
-        updateSummary();
-      }
-
-      billingToggleCheckbox.addEventListener('change', setBillingCycle);
-
-      monthlyLabel.addEventListener('click', function() {
-        if (billingToggleCheckbox.checked) {
-          billingToggleCheckbox.checked = false;
-          setBillingCycle();
-        }
-      });
-
-      yearlyLabel.addEventListener('click', function() {
-        if (!billingToggleCheckbox.checked) {
-          billingToggleCheckbox.checked = true;
-          setBillingCycle();
-        }
-      });
-
-      starterPlan.addEventListener('click', function() {
-        state.selectedPlan = 'starter';
-        starterPlan.classList.add('selected');
-        growthPlan.classList.remove('selected');
-        updateSummary();
-      });
-
-      growthPlan.addEventListener('click', function() {
-        state.selectedPlan = 'growth';
-        growthPlan.classList.add('selected');
-        starterPlan.classList.remove('selected');
-        updateSummary();
-      });
-
-      sermonStudioCheckbox.addEventListener('change', function() {
-        state.addons.sermonStudio = this.checked;
-        document.getElementById('sermon-studio').classList.toggle('selected', this.checked);
-        updateSummary();
-      });
-
-      designStudioCheckbox.addEventListener('change', function() {
-        state.addons.designStudio = this.checked;
-        document.getElementById('design-studio').classList.toggle('selected', this.checked);
-        updateSummary();
-      });
-
-      socialAccountsCheckbox.addEventListener('change', function() {
-        if (this.checked) {
-          if (state.addons.socialAccounts === 0) {
-            state.addons.socialAccounts = 1;
-            socialAccountsCount.textContent = '1';
-            decreaseAccounts.disabled = false;
-          }
-        } else {
-          state.addons.socialAccounts = 0;
-          socialAccountsCount.textContent = '0';
-          decreaseAccounts.disabled = true;
-        }
-        document.getElementById('social-accounts').classList.toggle('selected', this.checked);
-        updateSummary();
-      });
-
-      decreaseAccounts.addEventListener('click', function() {
-        if (state.addons.socialAccounts > 1) {
-          state.addons.socialAccounts--;
-          socialAccountsCount.textContent = state.addons.socialAccounts;
-          if (state.addons.socialAccounts === 1) {
-            decreaseAccounts.disabled = true;
-          }
-          updateSummary();
-        }
-      });
-
-      increaseAccounts.addEventListener('click', function () {
-  if (!socialAccountsCheckbox.checked) {
-    socialAccountsCheckbox.checked = true;
-    document.getElementById('social-accounts').classList.add('selected');
-  }
-
-  state.addons.socialAccounts++;
-  socialAccountsCount.textContent = state.addons.socialAccounts;
-  decreaseAccounts.disabled = false;
-  updateSummary();
-});
-
-      // Make entire sermon studio card clickable
-      document.getElementById('sermon-studio').addEventListener('click', function(e) {
-        // Don't trigger if clicking on the checkbox directly
-        if (e.target !== sermonStudioCheckbox && !e.target.closest('.checkbox-container')) {
-          sermonStudioCheckbox.checked = !sermonStudioCheckbox.checked;
-          state.addons.sermonStudio = sermonStudioCheckbox.checked;
-          this.classList.toggle('selected', sermonStudioCheckbox.checked);
-          updateSummary();
-        }
-      });
-
-      // Make entire design studio card clickable
-      document.getElementById('design-studio').addEventListener('click', function(e) {
-        // Don't trigger if clicking on the checkbox directly
-        if (e.target !== designStudioCheckbox && !e.target.closest('.checkbox-container')) {
-          designStudioCheckbox.checked = !designStudioCheckbox.checked;
-          state.addons.designStudio = designStudioCheckbox.checked;
-          this.classList.toggle('selected', designStudioCheckbox.checked);
-          updateSummary();
-        }
-      });
-
-      // Make entire social accounts card clickable
-      document.getElementById('social-accounts').addEventListener('click', function(e) {
-        // Don't trigger if clicking on the checkbox, or the +/- buttons
-        if (e.target !== socialAccountsCheckbox && 
-            !e.target.closest('.checkbox-container') && 
-            !e.target.closest('.social-accounts-control')) {
-          
-          socialAccountsCheckbox.checked = !socialAccountsCheckbox.checked;
-          
-          if (socialAccountsCheckbox.checked) {
-            if (state.addons.socialAccounts === 0) {
-              state.addons.socialAccounts = 1;
-              socialAccountsCount.textContent = '1';
-              decreaseAccounts.disabled = false;
-            }
-          } else {
-            state.addons.socialAccounts = 0;
-            socialAccountsCount.textContent = '0';
-            decreaseAccounts.disabled = true;
-          }
-          
-          this.classList.toggle('selected', socialAccountsCheckbox.checked);
-          updateSummary();
-        }
-      });
-
-      // Mobile-friendly tooltip for info icons
-      function closeAllTooltips() {
-        document.querySelectorAll('.info-tooltip.active').forEach(function(tip) {
-          tip.classList.remove('active');
-        });
-      }
-      document.querySelectorAll('.info-tooltip .info-icon').forEach(function(icon) {
-        icon.addEventListener('click', function(e) {
-          e.stopPropagation();
-          var tip = this.parentElement;
-          var isActive = tip.classList.contains('active');
-          closeAllTooltips();
-          if (!isActive) {
-            tip.classList.add('active');
-          }
-        });
-      });
-      document.body.addEventListener('click', function() {
-        closeAllTooltips();
-      });
-      window.addEventListener('resize', function() {
-        closeAllTooltips();
-      });
-
-      // Helper Functions
       function updatePriceLabels() {
-        const cycle = state.billingCycle;
+        const cycle = billingCycle;
         const suffix = cycle === 'monthly' ? '/mo' : '/year';
         const showFreeTag = cycle === 'yearly';
-        
         starterPrice.textContent = `$${pricing[cycle].starter}${suffix}`;
         growthPrice.textContent = `$${pricing[cycle].growth}${suffix}`;
         sermonStudioPrice.textContent = `+$${pricing[cycle].sermonStudio}${suffix}`;
         designStudioPrice.textContent = `+$${pricing[cycle].designStudio}${suffix}`;
-        // Social accounts price is per account
-        const socialPrice = pricing[cycle].socialAccounts;
-        socialAccountsPrice.textContent = `+$${socialPrice}${suffix} per account`;
-
-        // Show/hide free tags
-        document.getElementById('starter-free-tag').style.display = showFreeTag ? 'inline-block' : 'none';
-        document.getElementById('growth-free-tag').style.display = showFreeTag ? 'inline-block' : 'none';
-        document.getElementById('sermon-studio-free-tag').style.display = showFreeTag ? 'inline-block' : 'none';
-        document.getElementById('design-studio-free-tag').style.display = showFreeTag ? 'inline-block' : 'none';
-        document.getElementById('social-accounts-free-tag').style.display = showFreeTag ? 'inline-block' : 'none';
+        socialAccountsPrice.textContent = `+$${pricing[cycle].socialAccounts}${suffix} per account`;
+        starterFreeTag.style.display = showFreeTag ? 'inline-block' : 'none';
+        growthFreeTag.style.display = showFreeTag ? 'inline-block' : 'none';
+        sermonStudioFreeTag.style.display = showFreeTag ? 'inline-block' : 'none';
+        designStudioFreeTag.style.display = showFreeTag ? 'inline-block' : 'none';
+        socialAccountsFreeTag.style.display = showFreeTag ? 'inline-block' : 'none';
       }
 
-      function updateSummary() {
-        summaryItems.innerHTML = '';
-        let total = 0;
-        
-        // Add selected plan to summary
-        if (state.selectedPlan) {
-          const planPrice = pricing[state.billingCycle][state.selectedPlan];
-          total += planPrice;
-          
-          const planName = state.selectedPlan === 'starter' ? 'Starter Plan' : 'Growth Plan';
-          addSummaryItem(planName, planPrice);
+      // Toggle logic
+      billingToggleCheckbox.addEventListener('change', function() {
+        if (billingToggleCheckbox.checked) {
+          billingCycle = 'yearly';
+          monthlyLabel.classList.remove('active');
+          yearlyLabel.classList.add('active');
+        } else {
+          billingCycle = 'monthly';
+          yearlyLabel.classList.remove('active');
+          monthlyLabel.classList.add('active');
         }
-        
-        // Add selected addons to summary
-        if (state.addons.sermonStudio) {
-          const price = pricing[state.billingCycle].sermonStudio;
-          total += price;
-          addSummaryItem('Sermon Studio', price);
+        updatePriceLabels();
+      });
+      monthlyLabel.addEventListener('click', function() {
+        if (billingToggleCheckbox.checked) {
+          billingToggleCheckbox.checked = false;
+          billingCycle = 'monthly';
+          yearlyLabel.classList.remove('active');
+          monthlyLabel.classList.add('active');
+          updatePriceLabels();
         }
-        
-        if (state.addons.designStudio) {
-          const price = pricing[state.billingCycle].designStudio;
-          total += price;
-          addSummaryItem('Design Studio', price);
+      });
+      yearlyLabel.addEventListener('click', function() {
+        if (!billingToggleCheckbox.checked) {
+          billingToggleCheckbox.checked = true;
+          billingCycle = 'yearly';
+          monthlyLabel.classList.remove('active');
+          yearlyLabel.classList.add('active');
+          updatePriceLabels();
         }
-        
-        if (state.addons.socialAccounts > 0) {
-          const price = pricing[state.billingCycle].socialAccounts * state.addons.socialAccounts;
-          total += price;
-          addSummaryItem(`Additional Social Accounts (${state.addons.socialAccounts})`, price);
-        }
-        
-        // Update total
-        const suffix = state.billingCycle === 'monthly' ? '/mo' : '/year';
-        totalPrice.textContent = `$${total}${suffix}`;
-        
-        // Update the href with simple static URL
-        getStartedBtn.href = 'https://app.churchsocial.ai/signup?via=danielle';
-      }
-
-      function addSummaryItem(name, price) {
-        const suffix = state.billingCycle === 'monthly' ? '/mo' : '/year';
-        const item = document.createElement('div');
-        item.className = 'summary-item';
-        item.innerHTML = `
-          <span>${name}</span>
-          <span>$${price}${suffix}</span>
-        `;
-        summaryItems.appendChild(item);
-      }
-
-      // Set default selection
-      starterPlan.click();
+      });
+      // Initial
+      updatePriceLabels();
     });
   </script>
-</div>
 </body>
 </html>
